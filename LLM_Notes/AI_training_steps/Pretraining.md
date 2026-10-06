@@ -232,3 +232,127 @@ Techniques such as hashes, n-gram matching, MinHash, locality-sensitive hashing,
 
 ---
 
+# 5. PII Removal
+
+Another important stage is handling **personally identifiable information (PII)**.
+
+Examples could include:
+
+```
+Full names
+Private addresses
+Phone numbers
+Email addresses
+Government identification numbers
+Financial information
+```
+
+Data-processing pipelines may use:
+
+- Pattern matching
+- Regular expressions
+- Named Entity Recognition
+- Specialized PII detection models
+- Blocklists
+- Other privacy filters
+
+For example:
+
+```
+My phone number is 9876543210
+```
+
+could potentially become:
+
+```
+My phone number is [REDACTED]
+```
+
+The exact privacy strategy varies considerably between datasets and organizations.
+
+---
+
+# 6. Data Quality Scoring
+
+After basic cleaning, datasets can be assigned quality scores.
+
+For example:
+
+|Document|Quality|
+|---|---|
+|Scientific article|0.98|
+|Good technical documentation|0.95|
+|Wikipedia article|0.93|
+|Normal blog|0.75|
+|Spam page|0.05|
+
+Then the training mixture can be controlled.
+
+This is important because:
+
+> **More data isn't automatically better.**
+
+A trillion low-quality tokens aren't necessarily better than a smaller amount of carefully selected high-quality data.
+
+Modern LLM training therefore focuses heavily on **data quality and data mixture**.
+
+---
+
+# 7. Data Mixture
+
+A model usually doesn't train on just one source.
+
+Imagine a simplified dataset:
+
+```
+Web             60%
+Books           10%
+Code            15%
+Wikipedia        5%
+Scientific text  5%
+Other            5%
+```
+
+This is called the **data mixture**.
+
+The exact percentages depend on the model.
+
+Why does this matter?
+
+Because different datasets teach different capabilities.
+
+### Books
+
+Can provide:
+
+- Long-form reasoning
+- Narrative structure
+- Rich vocabulary
+- Writing styles
+
+### Code
+
+Can provide:
+
+- Programming syntax
+- Logical structures
+- APIs
+- Algorithms
+
+### Scientific papers
+
+Can provide:
+
+- Technical vocabulary
+- Mathematical language
+- Scientific relationships
+
+### Web pages
+
+Provide enormous diversity.
+
+So dataset composition strongly influences what the model learns.
+
+---
+
+## The End 

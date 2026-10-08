@@ -103,7 +103,7 @@ The token IDs are converted into **vectors called embeddings**.
 
 Simplified:
 
-![[tokenization.excalidraw]]
+![[tokenization.excalidraw|1200]]
 
 For example:
 
